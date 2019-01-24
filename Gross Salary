@@ -1,0 +1,25 @@
+try: #To Try The Error and To Catch The Error
+  T = int(input("Enter The Testcases You Want:")) #Number Of Testcases
+  if T>=1 and T<1000:
+    for i in range(T):
+      Sal=int(input("Enter Your Salary :")) #Salary details
+      if Sal>=1 and Sal<=100000:
+        if Sal<1500: #Checking The Conditions Based On Salary
+          M=int(input("Enter Your HRA Percentage :")) #HRA Percentage
+          K=int(input("Enter Your DA Percentage :")) #DA Percentage
+          HRA=(Sal*M)/100
+          DA=(Sal*K)/100
+          GS=Sal+HRA+DA  #Total Gross Salary
+          print(GS)
+        elif Sal>=1500: #Checking The Conditions Based On Salary
+          K=int(input("Enter Your DA Percentage :")) #DA Percentage
+          HRA=500
+          DA=(Sal*K)/100
+          GS=Sal+HRA+DA  #Total Gross Salary
+          print(GS)
+      else:
+        print("Enter The Salary Between 1 and 100000!")
+  else:
+    print("Enter The Range Between 1 and 1000 only!")
+except:
+  print("Enter Valid Data Only!") # To Solve The Error Problem
