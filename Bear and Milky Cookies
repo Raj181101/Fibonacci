@@ -1,0 +1,29 @@
+a=[]
+try: #To Try The Error and To Catch The Error
+  T = int(input("Enter The Testcases You Want:")) #Number Of Testcases
+  if T>=1 and T<50:
+    for i in range(T):
+      N=int(input("Enter The No Of Minutes :")) #Number Of Minutes
+      if N>=1 and N<50:
+        for j in range(N):
+          k=input("Enter Your Choice Cookie or Milk:") #Choosing Cookie or Milk
+          a.append(k) #Adding The Choices To List
+        print(' '.join(a)) # List Of Elements With Spaces
+        d=len(a)
+        if (d==1 and a[0]=="cookie"): #1st Possible Way Of Conditions
+          print("No")
+        elif (d==1 and a[0]=="milk"): #2nd Possible Way of Condition
+          print("Yes")
+        elif (a[0]=="cookie" and a[1]=="cookie") or (a[0]=="milk" and a[1]=="cookie") or (all(a[0]=='milk' for x in range(len(a)-1))==True) and (a[-1]=='cookie'): #3rd lly
+          print("No")
+        elif (all(x==a[0] for x in a)==True): #4th Simlilarly
+          print("Yes")
+        else:
+          print("Yes")
+        a=[] #To Make The List Again Empty For New Items Means It Overrides Previous Values
+      else:
+        print("Enter Range between 1 and 50 only!")
+  else:
+    print("Enter Range between 1 and 50 only!")
+except:
+  print("Enter Valid Data Only!")
